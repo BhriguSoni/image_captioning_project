@@ -99,3 +99,6 @@ def index(request):
         "uploaded_file_url": uploaded_file_url,
         "caption": caption
     })
+    
+def about(request):
+    return render(request, 'about.html') 

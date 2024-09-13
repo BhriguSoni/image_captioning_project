@@ -1,27 +1,39 @@
-<!-- image_captioning_app/templates/index.html -->
+{% extends 'base.html' %} {% block title %}Image Captioning Home{% endblock %}
+{% block content %}
+<div class="main-content">
+  <!-- Main Section for Image Upload and Caption -->
+  <div class="left-section">
+    <h1>Upload an Image to Generate a Caption</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{ form.as_p }}
+      <br /><br /><br />
+      <button type="submit" class="btn btn-success">Upload</button>
+    </form>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Image Captioning</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h1>Upload an Image to Generate a Caption</h1>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Upload</button>
-        </form>
-        {% if uploaded_file_url %}
-            <p><a href="{% url 'index' %}">Back to Home</a></p>      
-            <p>Uploaded Image:</p>
-            <img src="{{ uploaded_file_url }}" alt="Uploaded Image">
-            <p>Caption: {{ caption }}</p>
-            <p><a href="{% url 'index' %}">Back to Home</a></p>
-        {% endif %}
-    </div>
-</body>
-</html>
+    {% if uploaded_file_url %}
+
+    <p>Uploaded Image:</p>
+    <img src="{{ uploaded_file_url }}" alt="Uploaded Image" />
+  </br>
+    <h6>Caption:</h6> 
+    <h4>{{ caption }}</h4>
+
+    {% endif %}
+  </div>
+
+  <!-- Right Section for Information About the App -->
+  <div class="right-section">
+    <h2>About Image Captioning App</h2>
+    <p>
+      This app uses deep learning to generate captions for images uploaded by
+      users. It provides a quick and efficient way to understand the content of
+      an image through automatically generated captions.
+    </p>
+    <ul>
+      <li>Upload any image file (JPG, PNG, etc.)</li>
+      <li>Receive an AI-generated caption for the image</li>
+      <li>Uses state-of-the-art neural network models for image captioning</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

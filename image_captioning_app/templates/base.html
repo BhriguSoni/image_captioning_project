@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Image Captioning App{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="{% url 'index' %}" class="app-name">Image Captioning App</a>
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About App</a></li>
+        <li>
+          <a href="https://github.com/BhriguSoni" target="_blank"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/bhrigu-soni" target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a href="https://yourwebsite.com" target="_blank">My Website</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Block -->
+    <div class="container">{% block content %} {% endblock %}</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Image Captioning App | Designed by Bhrigu Soni </h6></p> 
+      <p>
+            <a href="https://github.com/BhriguSoni" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/bhrigu-soni/" target="_blank">LinkedIn</a> |
+            <a href="https://yourportfolio.com" target="_blank">Portfolio</a>
+        </p>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  </body>
+</html>

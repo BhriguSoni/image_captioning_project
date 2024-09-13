@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+{% block title %}
+About - Image Captioning App
+{%endblock %} 
+{% block content %}
+<div class="right-section">
+    <h1>About the Image Captioning App</h1>
+    <p>
+        This Image Captioning App is designed to automatically generate captions
+        for images using state-of-the-art deep learning models. The app enables 
+        users to upload an image and receive a human-like caption describing the 
+        contents of the image. This can be particularly useful in scenarios such 
+        as image tagging, accessibility, or content discovery.
+    </p>
+    
+    <h2>Technologies Used</h2>
+    <p>
+        This web application is built using a combination of powerful technologies 
+        and frameworks. Below is a list of key technologies used:
+    </p>
+    <ul>
+        <li><strong>TensorFlow</strong>: <code>TensorFlow</code> is a deep learning library used to create the neural networks for image captioning.</li>
+        <li><strong>Xception Model</strong>: A pre-trained image feature extraction model, used for processing images and feeding features into the caption generation network.</li>
+        <li><strong>LSTM (Long Short-Term Memory)</strong>: The <code>LSTM layers</code> are used in the model to generate the sequence of words for the caption.</li>
+        <li><strong>Python</strong>: The primary programming language used to build and integrate the application.</li>
+        <li><strong>Django</strong>: The backend framework for handling HTTP requests and rendering the application UI.</li>
+        <li><strong>Bootstrap</strong>: A front-end framework used for designing a responsive and modern user interface.</li>
+        <li><strong>HTML, CSS</strong>: Standard web technologies for structuring and styling the web pages.</li>
+    </ul>
+
+    <h2>How It Works</h2>
+    <p>
+        The process of generating captions begins with the user uploading an image.
+        The app processes the image using the Xception model to extract its features. 
+        Then, the LSTM network generates a corresponding caption based on these features. 
+        Finally, the caption is displayed to the user.
+    </p>
+
+    <p>
+        This project demonstrates the use of deep learning in real-world applications, 
+        showcasing the power of artificial intelligence in understanding and interpreting 
+        visual data.
+    </p>
+    
+    <div class="button-container1">
+        <a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+
+
+{% endblock %}

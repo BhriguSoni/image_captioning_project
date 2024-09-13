@@ -21,6 +21,7 @@ from django.urls import path
 from image_captioning_app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('admin/', admin.site.urls),  # Admin panel
+    path('', views.index, name='index'),  # Home page
+    path('about/', views.about, name='about'),  # About page
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
